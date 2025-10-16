@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@400;600;700&display=swap');
+/* --- Réglages de base --- */
+
+body{
+    background-color:#f9f9f9;
+    /* background: linear-gradient(0.85turn, #ff0000, #ddff00); */
+    margin: 0;
+    padding-top: 60px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #1C1C1C;
+}
+
+p, li, span {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  color: #1C1C1C;
+  line-height: 1.7;
+}
+
+/* --- Barre de navigation fixe --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 0px 0px 0px 20px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+  overflow: hidden;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+
+/* TEXTE EN TETE */
+
+.en_tete{
+    display: flex;
+    justify-content: center;
+    width:auto;
+    height: auto;
+    padding-top: 10px;
+}
+
+.en_tete_texte{
+    border-radius: 10px;
+    width:auto;
+    display: flex;
+    color: #1C1C1C;
+    background-color:#f1f1f1 ;
+    font-size: 76px;
+    margin: 0px;
+    padding: 10px 10px;
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Animations --- */
+
+/* Animation d'apparition avec glissement du haut */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Application au titre */
+.en_tete_texte{
+  animation: fadeSlideDown 1s ease-out;
+}
+
+
