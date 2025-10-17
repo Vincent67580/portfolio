@@ -2,27 +2,92 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="refresh" content="5">
+        <!-- <meta http-equiv="refresh" content="5"> -->
         <title>Projet personnelles</title>
         <link rel="stylesheet"  href="../style/style.css">
+        <link rel="stylesheet"  href="../style/projetPerso.css">
+        <canvas id="network-bg"></canvas>
+        <script src="../script/script.js"></script>
     </head>
     <body>
+    <!-- Barre de navigation -->
         <nav class="navbar">
             <div class="logo">Vincent Bonnet</div>
             <ul class="nav-links">
                 <li><a href="../index.html">Accueil</a></li>
                 <li><a href="about.html">Info perso</a></li>
-                <li><a href="projetPerso.html">Projets perso</a></li>
+                <li><a href="projetPerso.html"class="active">Projets perso</a></li>
                 <li><a href="experiencePro.html">Expériences pro</a></li>
-                <li><a href="veilleTechnologique.html">Veille technologique</a></li>
+                <li><a href="veilleTechnologique.html" >Veille technologique</a></li>
                 <li><a href="stages/indexStage.html">Stage</a></li>
                 <li>   </li>
             </ul>
         </nav>
 
-        <div class="en_tete">
-            <h1 class="en_tete_texte">Projets</h1>
+    <!-- EN-TÊTE -->
+    <header class="en_tete">
+      <h1 class="en_tete_texte">Projets personnels</h1>
+    </header>
+
+    <!-- INTRODUCTION -->
+    <section class="intro">
+      <p>
+        Vous trouverez ici une sélection de mes projets personnels réalisés au cours de ma formation et durant mon temps libre.
+        Ces projets m’ont permis d’approfondir mes compétences en développement et de découvrir de nouvelles technologies.
+      </p>
+    </section>
+
+    <!-- LISTE DE PROJETS -->
+    <section class="projets">
+      <div class="projet-card">
+        <img src="../images/projet1.jpg" alt="Projet 1">
+        <div class="projet-content">
+          <h2>Portfolio personnel</h2>
+          <p>
+            Site web développé en HTML, CSS et un peu de JavaScript, servant de vitrine à mes compétences et mes réalisations.
+          </p>
+          <a href="#" class="btn-projet" target="_blank">Voir le projet</a>
         </div>
-        <br>
-    </body>
+      </div>
+
+      <div class="projet-card">
+  <a href="../images/imageProjetPythonGestionRDV.png"><img src="../images/imageProjetPythonGestionRDV.png" alt="Application Python de gestion de rendez-vous"></a>
+  <div class="projet-content">
+    <h2>Application Python de gestion de rendez-vous</h2>
+    <p>
+      Développement d’une application en <strong>Python</strong> fonctionnant en <strong>mode console</strong>, 
+      permettant de <strong>gérer des rendez-vous clients</strong> (ajout, affichage, modification, suppression) 
+      et d’envoyer automatiquement un <strong>e-mail de confirmation ou d’annulation</strong> à chaque action.
+    </p>
+    <ul class="tech-list">
+      <li>Langage : Python</li>
+      <li>Base de données : SQLite3</li>
+      <li>Modules : smtplib, email, sqlite3</li>
+      <li>Fonctionnalités : prise/suppression de RDV, validation, notifications automatiques</li>
+    </ul>
+    <a href="../projets/projetPythonGestionRDV.py" class="btn-projet" target="_blank">Voir le code</a>
+  </div>
+</div>
+
+      <!-- <div class="projet-card">
+        <img src="../images/projet3.jpg" alt="Projet 3">
+        <div class="projet-content">
+          <h2>Mini site e-commerce</h2>
+          <p>
+            Prototype de site d’achat développé en PHP et MySQL avec gestion de sessions et panier dynamique.
+          </p>
+          <a href="#" class="btn-projet" target="_blank">Voir le projet</a>
+        </div>
+      </div>
+       -->
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2025 - Portfolio de Vincent Bonnet </p>
+    </footer>
+
+        
+</body>
 </html>
