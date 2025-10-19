@@ -116,3 +116,26 @@
   line-height: 1.7;
   color: #333;
 }
+
+
+/* Affichage responsive pour mobile */
+@media (max-width: 800px){
+    .info_perso {
+        font-size: 1em;
+        padding: 30px 15px;
+    }
+    .competences{
+        padding: 30px 15px;
+        margin: 0px auto;
+    }
+    
+    .presentation, .competences, .objectif {
+        padding: 30px 15px;
+        margin: 40px auto;
+    }
+    .presentation h2,
+    .competences h2,  
+    .objectif h2 {
+        font-size: 1.5em;
+    }
+}
