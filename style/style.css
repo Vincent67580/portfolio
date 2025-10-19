@@ -6,18 +6,6 @@
   --couleur-texte-principal: #1C1C1C;
 }
 
-#width-display {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(45, 45, 45, 0.8);
-  color: #ffcc00;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-family: monospace;
-  font-size: 0.9em;
-  z-index: 2000;
-}
 
 /*  Fond animé  */
 #network-bg {
@@ -149,18 +137,22 @@ p, li, span {
     display: flex;
   }
 
+  /* --- NAVIGATION MOBILE --- */
   .nav-links {
     position: fixed;
-    top: 60px;
+    top: 5px;
     right: 0;
-    height: calc(100vh - 60px);
-    width: 220px;
+    height: calc(100vh - 5px);
+    width: 50%;
     background-color: rgba(45, 45, 45, 0.98);
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding-top: 20px;
+    padding-top: 40px;
     transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-links.open {
@@ -168,18 +160,44 @@ p, li, span {
   }
 
   .nav-links li {
-    margin: 15px 0;
+    margin: 5px 0;
   }
 
-  /* Animation du menu burger */
+  .nav-links a {
+    font-size: 1.2em;        
+    padding: 10px 20px;      
+  }
+
+  /* --- LOGO --- */
+  .navbar .logo {
+    font-size: 1.3em;
+    text-align: left;
+  }
+
+  /* --- MENU BURGER --- */
+  .menu-toggle {
+    position: relative;
+    z-index: 1100;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Animation croix */
   .menu-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 6px);
   }
   .menu-toggle.open span:nth-child(2) {
     opacity: 0;
   }
   .menu-toggle.open span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 }
 

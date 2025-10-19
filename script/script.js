@@ -13,21 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Élément affichant la largeur
-  const widthDisplay = document.createElement("div");
-  widthDisplay.id = "width-display";
-  document.body.appendChild(widthDisplay);
 
-  // Fonction pour mettre à jour la largeur
-  const updateWidth = () => {
-    widthDisplay.textContent = `Largeur : ${window.innerWidth}px`;
-  };
-
-  // Mise à jour initiale + lors du redimensionnement
-  updateWidth();
-  window.addEventListener("resize", updateWidth);
-});
 
 
 // === Fond réseau animé + effet "énergie centrale" ===
