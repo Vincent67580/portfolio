@@ -47,33 +47,39 @@ p, li, span {
 
 
 
-/* --- Barre de navigation fixe --- */
+/* --- Barre de navigation moderne --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2d2d2d;
-  padding: 0px 0px 0px 20px;
+  background: rgba(45, 45, 45, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 0 25px;
   height: 60px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; 
-  overflow: hidden;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
 }
 
+/* --- Logo --- */
 .navbar .logo {
   color: white;
   font-size: 1.4em;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
+/* --- Liens --- */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   margin: 0;
+  transition: transform 0.3s ease;
 }
 
 .nav-links li {
@@ -84,30 +90,86 @@ p, li, span {
   text-decoration: none;
   color: white;
   font-size: 1em;
-  transition: color 0.3s;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
   color: var(--bar-navigation-couleur-texte);
 }
 
-/* === Lien actif (page actuelle) === */
+/* --- Lien actif --- */
 .nav-links a.active {
-  position: relative;
-  color:  var(--bar-navigation-couleur-texte);
+  color: var(--bar-navigation-couleur-texte);
 }
 
-/* La petite barre sous le lien actif */
 .nav-links a.active::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px; /* espace entre le texte et la barre */
+  bottom: -5px;
   width: 100%;
   height: 3px;
-  background-color:  var(--bar-navigation-couleur-texte);
+  background-color: var(--bar-navigation-couleur-texte);
   border-radius: 2px;
 }
+
+/* --- Burger menu --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* --- Responsive --- */
+@media (max-width: 800px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    height: calc(100vh - 60px);
+    width: 220px;
+    background-color: rgba(45, 45, 45, 0.98);
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 20px;
+    transform: translateX(100%);
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  /* Animation du menu burger */
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
 
 
 

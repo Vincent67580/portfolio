@@ -1,0 +1,65 @@
+/* ====== SECTION EXPÉRIENCE ====== */
+
+
+
+#experience {
+  padding: 60px 20px;
+  position: relative;   /* pour qu’il soit au-dessus du canvas sans le bloquer */
+  background: transparent;  /* pas de fond qui cache le canvas */
+  z-index: 1; 
+}
+
+#experience .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.35);
+}
+
+.experience-title {
+  font-size: 1.3rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.experience-title span {
+  color: #0077cc;
+}
+
+.experience-title a {
+  text-decoration: none;
+}
+
+.experience-date {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.experience-tech {
+  color: #444;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.experience-list {
+  padding-left: 20px;
+  color: #333;
+}
+
+.experience-list li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
