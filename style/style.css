@@ -226,6 +226,13 @@ p, li, span {
     box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.4);
 }
 
+@media (max-width: 800px) {
+    .en_tete_texte{
+        font-size: 28px;
+        padding: 8px 8px;
+    }
+}
+
 /* --- Animations --- */
 
 /* Animation d'apparition avec glissement du haut */
