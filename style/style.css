@@ -6,6 +6,19 @@
   --couleur-texte-principal: #1C1C1C;
 }
 
+#width-display {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(45, 45, 45, 0.8);
+  color: #ffcc00;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9em;
+  z-index: 2000;
+}
+
 /*  Fond animé  */
 #network-bg {
   position: fixed;
