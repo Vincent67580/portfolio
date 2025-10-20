@@ -168,6 +168,7 @@ p, li, span {
   .menu-toggle {
     display: flex;
   }
+  
 
   /* --- NAVIGATION MOBILE --- */
   .nav-links {
@@ -175,8 +176,8 @@ p, li, span {
     top: 5px;
     right: 0;
     height: calc(100vh - 5px);
-    width: 70%;
-    background-color: rgba(45, 45, 45, 0.98);
+    width: 75%;
+    background-color: rgba(45, 45, 45, 0.99);
     flex-direction: column;
     align-items: center;
     justify-content: start;
@@ -196,13 +197,13 @@ p, li, span {
   }
 
   .nav-links a {
-    font-size: 1.2em;        
+    font-size: 0.9em;        
     padding: 10px 20px;      
   }
 
   /* --- LOGO --- */
   .navbar .logo {
-    font-size: 1.3em;
+    font-size: 1em;
     text-align: left;
   }
 
