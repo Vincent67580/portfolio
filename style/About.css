@@ -12,7 +12,7 @@
 .info_perso {
   margin-top: 20px;         
   text-align: center;        
-  font-size: 1.4em;          
+  font-size: 1.2em;          
   background-color: #ffffff; 
   padding: 40px 20px;        
   max-width: 800px;          
@@ -23,6 +23,7 @@
   animation: fadeSlideUp 1s ease-out;
 }
 .info_perso p {
+  font-size: 1.2em;
   margin: 0;
   color: #333;
 }
@@ -31,7 +32,7 @@
 /* --- Section “Mon parcours” --- */
 .presentation {
   max-width: 900px;
-  margin: 60px auto;
+  margin: 30px auto;
   padding: 40px 20px;
   background-color: #ffffff;
   border-radius: 12px;
@@ -44,12 +45,18 @@
   color: #1C1C1C;
   margin-bottom: 15px;
 }
+.presentation p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+}
+
 
 
 /* --- Section “Mes points forts” --- */
 .competences {
   max-width: 1000px;
-  margin: 60px auto;
+  margin: 30px auto;
   padding: 40px 20px;
   background-color: #ffffff;
   border-radius: 12px;
@@ -112,7 +119,7 @@
 }
 
 .objectif p {
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.7;
   color: #333;
 }
@@ -139,7 +146,8 @@
         font-size: 1.5em;
     }
     .info_perso p,
+    .presentation p,
     .objectif p {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 }

@@ -19,10 +19,19 @@
   background-attachment: fixed;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* pousse le footer en bas */
+}
 
 body{
     background-color:#f9f9f9;
-    /* background: linear-gradient(0.85turn, #ff0000, #0037ff); */
     margin: 0;
     padding-top: 60px;
 }
@@ -131,6 +140,29 @@ p, li, span {
   transition: all 0.3s ease;
 }
 
+/* TEXTE EN TETE */
+
+.en_tete{
+    display: flex;
+    justify-content: center;
+    width:auto;
+    height: auto;
+    padding-top: 10px;
+}
+
+.en_tete_texte{
+    border-radius: 10px;
+    width:auto;
+    display: flex;
+    color: var(--couleur-texte-principal);
+    background-color:#f1f1f1 ;
+    font-size: 3.5em;
+    margin: 0px;
+    padding: 10px 10px;
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.4);
+}
+
+
 /* --- Responsive --- */
 @media (max-width: 800px) {
   .menu-toggle {
@@ -143,7 +175,7 @@ p, li, span {
     top: 5px;
     right: 0;
     height: calc(100vh - 5px);
-    width: 75%;
+    width: 70%;
     background-color: rgba(45, 45, 45, 0.98);
     flex-direction: column;
     align-items: center;
@@ -199,39 +231,15 @@ p, li, span {
   .menu-toggle.open span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
-}
 
 
 
-
-/* TEXTE EN TETE */
-
-.en_tete{
-    display: flex;
-    justify-content: center;
-    width:auto;
-    height: auto;
-    padding-top: 10px;
-}
-
-.en_tete_texte{
-    border-radius: 10px;
-    width:auto;
-    display: flex;
-    color: var(--couleur-texte-principal);
-    background-color:#f1f1f1 ;
-    font-size: 76px;
-    margin: 0px;
-    padding: 10px 10px;
-    box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 800px) {
-    .en_tete_texte{
-        font-size: 28px;
+  .en_tete_texte{
+        font-size: 2rem;
         padding: 8px 8px;
     }
 }
+
 
 /* --- Animations --- */
 
@@ -262,9 +270,8 @@ p, li, span {
   background-color: #2d2d2d;
   color: rgb(255, 255, 255);
   padding: 5px;
-  margin-top: 80px;
+  margin-top: auto;
 }
 .footer * {
   color: #ffffff;
 }
-

@@ -104,3 +104,14 @@
 .tech-list li {
   margin-bottom: 5px;
 }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .projets {
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro {
+    font-size: 1em;
+  }
+}
