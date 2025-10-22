@@ -91,18 +91,40 @@
 
 /* Carte pour le stage futur */
 .prochain_stage {
-  opacity: 0.5;
+  opacity: 0.6;
   font-style: italic;
 }
 
-/* Responsive */
+/* --- Responsive --- */
 @media (max-width: 800px) {
   .stages_container {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding: 0 10px;
   }
 
   .sous_titre {
+    width: 90%;
     font-size: 1em;
+    padding: 25px 15px;
+  }
+
+  .stage_card {
+    width: 80%;
+    padding: 20px 15px;
+  }
+
+  .stage_card h2 {
+    font-size: 1.2em;
+  }
+
+  .stage_card p {
+    font-size: 0.95em;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.95em;
   }
 }

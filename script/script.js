@@ -3,14 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.getElementById('nav-links');
 
   if (menuToggle && navLinks) {
+    // ✅ Ouvre/ferme le menu quand on clique sur le bouton burger
     menuToggle.addEventListener('click', () => {
       menuToggle.classList.toggle('open');
       navLinks.classList.toggle('open');
     });
+
+    // ✅ Ferme le menu quand on clique sur un lien du menu
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
   }
 });
-
-
 
 
 
