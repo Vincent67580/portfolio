@@ -4,14 +4,29 @@
    =========================== */
 
 /* ====== SECTION EXPÉRIENCE ====== */
-
-
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.intro-experience {
+  max-width: 900px;
+  margin: 20px auto 40px;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: #ffffff;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeSlideUp 1s ease-out;
+}
 
 #experience {
-  padding: 60px 20px;
-  position: relative;   /* pour qu’il soit au-dessus du canvas sans le bloquer */
-  background: transparent;  /* pas de fond qui cache le canvas */
+  padding: 20px 20px;
+  position: relative;   
+  background: transparent; 
   z-index: 1; 
+  animation: fadeSlideUp 1s ease-out;
+
 }
 
 #experience .container {

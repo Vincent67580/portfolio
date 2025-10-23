@@ -7,21 +7,29 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-   
-/* TEXTE */
-.info_perso {
-  margin-top: 20px;         
-  text-align: center;        
-  font-size: 1.2em;          
-  background-color: #ffffff; 
-  padding: 40px 20px;        
-  max-width: 800px;          
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 12px;       
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+
+/* ZONE TEXTE */
+.info_perso, .presentation, .competences, .objectif {
+  margin-top: 20px; 
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 40px 30px 40px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   animation: fadeSlideUp 1s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+
 }
+
+section:nth-of-type(1){animation-delay:0.2s;}
+section:nth-of-type(2){animation-delay:0.4s;}
+section:nth-of-type(3){animation-delay:0.6s;}
+section:nth-of-type(4){animation-delay:0.8s;}
+
+/* --- Section Info Perso --- */
 .info_perso p {
   font-size: 1.2em;
   margin: 0;
@@ -30,21 +38,7 @@
 
 
 /* --- Section “Mon parcours” --- */
-.presentation {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 40px 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  animation: fadeSlideUp 1s ease-out;
-}
 
-.presentation h2 {
-  color: #1C1C1C;
-  margin-bottom: 15px;
-}
 .presentation p {
   font-size: 1.1em;
   line-height: 1.7;
@@ -54,22 +48,6 @@
 
 
 /* --- Section “Mes points forts” --- */
-.competences {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 40px 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  animation: fadeSlideUp 1.2s ease-out;
-}
-
-.competences h2 {
-  color: #1C1C1C;
-  margin-bottom: 25px;
-  font-size: 2em;
-}
 
 .competence-grid {
   display: flex;
@@ -101,22 +79,6 @@
 
 
 /* --- Section Objectif / Centres d’intérêt --- */
-.objectif {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 40px 25px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  animation: fadeSlideUp 1.4s ease-out;
-}
-
-.objectif h2 {
-  color: #1C1C1C;
-  margin-bottom: 20px;
-  font-size: 2em;
-}
 
 .objectif p {
   font-size: 1.1em;
@@ -149,11 +111,7 @@
     padding: 15px;
     }
 
-    .presentation h2,
-    .competences h2,  
-    .objectif h2 {
-        font-size: 1.5em;
-    }
+    
     .info_perso p,
     .presentation p,
     .objectif p {

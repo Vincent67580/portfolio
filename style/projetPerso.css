@@ -23,6 +23,7 @@
   animation: fadeSlideUp 1s ease-out;
 }
 
+
 /* Section projets */
 .projets {
   display: flex;
@@ -60,12 +61,6 @@
 .projet-content {
   padding: 20px;
   text-align: center;
-}
-
-.projet-content h2 {
-  font-size: 1.4em;
-  margin-bottom: 10px;
-  color: #1C1C1C;
 }
 
 .projet-content p {
@@ -111,7 +106,16 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .projet-card {
+    width: 85%;
+    min-width: 240px;
+  }
+
   .intro {
     font-size: 1em;
+    width: 80%;
   }
+  
+
 }

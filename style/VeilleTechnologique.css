@@ -34,12 +34,6 @@
   box-shadow: 0 6px 28px rgba(0, 42, 255, 0.35);
 }
 
-.veille-card h2 {
-  font-size: 1.6rem;
-  color: #0077cc;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
 
 .veille-card p {
   color: #333;
