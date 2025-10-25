@@ -16,25 +16,33 @@
   <body>
     <canvas id="network-bg"></canvas>
 
-    <!-- Barre de navigation -->
-    <nav class="navbar">
-      <div class="logo">Vincent Bonnet</div>
+<!-- Barre de navigation -->
+<nav class="navbar">
+  <div class="logo">
+    Vincent Bonnet
+  </div>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="pages/about.html">Info perso</a></li>
-        <li><a href="pages/projetPerso.html">Projets perso</a></li>
-        <li><a href="pages/experiencePro.html">Expériences pro</a></li>
-        <li><a href="pages/veilleTechnologique.html">Veille technologique</a></li>
-        <li><a href="pages/stages/indexStage.html">Stage</a></li>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="active">Accueil</a></li>
+    <li><a href="pages/about.html">Info perso</a></li>
+    <li><a href="pages/projetPerso.html">Projets perso</a></li>
+    <li><a href="pages/experiencePro.html">Expériences pro</a></li>
+    <li><a href="pages/veilleTechnologique.html">Veille technologique</a></li>
+    <li class="dropdown">
+      <a href="pages/stages/indexStage.html">Stage</a>
+      <ul class="dropdown-menu">
+        <li><a href="pages/stages/stage1.html">Stage 1</a></li>
+        <li><a href="pages/stages/stage2.html">Stage 2</a></li>
       </ul>
-    </nav>
+    </li>
+    <li></li>
+  </ul>
+</nav>
 
     <main>
       <!-- En-tête -->

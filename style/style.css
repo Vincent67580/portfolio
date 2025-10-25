@@ -174,6 +174,91 @@ a:hover {
 .menu-toggle.open span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
+/* --- Dropdown (Stage) --- */
+.navbar .dropdown {
+  position: relative;
+}
+/* Flèche à côté du mot Stage */
+.navbar .dropdown > a::before {
+  content: "▼ ";
+  font-size: 0.7em;
+  color: white;
+  position: relative;
+  top: 0.5px;
+  margin-left: 6px;
+}
+
+/* Correction du soulignement pour qu’il reste actif */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--bar-navigation-couleur-texte);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Sous-menu */
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: rgba(45, 45, 45, 0.95);
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  top: 100%;
+  left: -15px;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  width: 110px;
+}
+
+/* Liens du sous-menu */
+.navbar .dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: color 0.3s ease;
+}
+
+/* Effet au survol des sous-liens */
+.navbar .dropdown-menu li a:hover {
+  color: var(--bar-navigation-couleur-texte);
+}
+
+/* Affichage du sous-menu au survol */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Soulignement animé jaune sur tous les liens */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--bar-navigation-couleur-texte);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Lien actif */
+.nav-links a.active {
+  color: var(--bar-navigation-couleur-texte);
+}
 
 
 /* --- En-tête --- */
