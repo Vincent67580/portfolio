@@ -35,6 +35,7 @@ html, body {
 
 body {
   background-color: #f9f9f9;
+  /* background: linear-gradient(135deg, #00aaff 0%, #ff0000 100%); */
   margin: 0;
   padding-top: 60px;
 }
