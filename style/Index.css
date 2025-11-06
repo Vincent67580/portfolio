@@ -33,7 +33,8 @@ section:nth-of-type(5){animation-delay:1s;}
 
 
 /* --- Bouton "En apprendre plus" --- */
-.info_perso a {
+.info_perso a,
+.competences a {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 20px;
@@ -42,7 +43,8 @@ section:nth-of-type(5){animation-delay:1s;}
   border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.info_perso a:hover {
+.info_perso a:hover,
+.competences a:hover {
   background-color: #ffcc00;
   color: #000;
   transform: scale(1.05);
