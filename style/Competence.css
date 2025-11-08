@@ -1,0 +1,61 @@
+/* ===========================
+   Fichier : Competence.css
+   Page : competence.html
+   =========================== */
+
+
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.comp-dev-web, .comp-programation ,.comp-outils ,.comp-base-donnee ,.comp-dev-application ,.comp-autres{
+    text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 40px 30px 40px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeSlideUp 1s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+section:nth-of-type(1){animation-delay:0.2s;}
+section:nth-of-type(2){animation-delay:0.4s;}
+section:nth-of-type(3){animation-delay:0.6s;}
+section:nth-of-type(4){animation-delay:0.8s;}
+section:nth-of-type(5){animation-delay:1s;}
+section:nth-of-type(6){animation-delay:1.2s;}
+
+
+.comp-dev-web:hover , .comp-programation:hover ,.comp-outils:hover ,.comp-base-donnee:hover ,.comp-dev-application:hover ,.comp-autres:hover {
+  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.55);
+}
+
+
+
+
+
+
+
+
+
+/* Responsive */
+
+@media (max-width: 800px){
+    .comp-dev-web, .comp-programation ,.comp-outils ,.comp-base-donnee ,.comp-dev-application ,.comp-autres{
+        max-width: 80%;
+        padding: 30px 15px;
+        margin: 25px auto;
+    }
+
+    .comp-dev-web.h2{
+        font-size: 1em;
+    }
+    
+}

@@ -1,0 +1,121 @@
+/* ===========================
+   Fichier : IndexStage.css
+   Page : Stage
+   =========================== */
+
+/* Animation douce d'apparition */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Introduction (texte au-dessus des cartes) */
+.sous_titre {
+  max-width: 900px;
+  margin: 10px auto 40px;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeSlideUp 1s ease-out;
+  color: #333;
+}
+
+/* Conteneur principal des cartes de stage */
+.stages_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px auto;
+  max-width: 1100px;
+  animation: fadeSlideUp 1.2s ease-out;
+}
+
+/* Carte de stage */
+.stage_card {
+  background-color: #ffffff;
+  width: 370px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 20px;
+}
+
+.stage_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.55);
+}
+
+
+.stage_card h3 {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* Texte de description */
+.stage_card p {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Bouton */
+.btn {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Carte pour le stage futur */
+.prochain_stage {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* --- Responsive --- */
+@media (max-width: 800px) {
+  .stages_container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .sous_titre {
+    width: 90%;
+    font-size: 1em;
+    padding: 25px 15px;
+  }
+
+  .stage_card {
+    width: 80%;
+    padding: 20px 15px;
+  }
+
+
+  .stage_card p {
+    font-size: 0.95em;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.95em;
+  }
+}

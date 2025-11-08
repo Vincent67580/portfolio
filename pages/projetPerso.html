@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta http-equiv="refresh" content="5"> -->
+        <title>Projets personnelles</title>
+        <link rel="stylesheet"  href="../style/style.css">
+        <link rel="stylesheet"  href="../style/projetPerso.css">
+        <canvas id="network-bg"></canvas>
+        <script src="../script/script.js"></script>
+    </head>
+    <body>
+
+<!-- Barre de navigation -->
+<nav class="navbar">
+  <div class="logo">
+    Vincent Bonnet
+  </div>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="about.html">Info personnelles</a></li>
+    <li class="dropdown">
+      <a href="stages/indexStage.html">Stage</a>
+      <ul class="dropdown-menu">
+        <li><a href="stages/stage1.html">Stage 1</a></li>
+        <li><a href="stages/stage2.html">Stage 2</a></li>
+      </ul>
+    </li>
+    <li><a href="competence.html">Compétences</a></li>
+    <li><a href="projetPerso.html" class="active">Projets personnelles</a></li>
+    <li><a href="experiencePro.html">Expériences professionnelles</a></li>
+    <li><a href="veilleTechnologique.html">Veille technologique</a></li>
+    
+  </ul>
+</nav>
+
+    <!-- EN-TÊTE -->
+    <header class="en_tete">
+      <h1 class="en_tete_texte">Projets personnels</h1>
+    </header>
+
+    <!-- INTRODUCTION -->
+    <section class="intro">
+      <h2>Introduction</h2>
+      <p>
+        Vous trouverez ici une sélection de mes projets personnels réalisés au cours de ma formation et durant mon temps libre.
+        Ces projets m’ont permis d’approfondir mes compétences en développement et de découvrir de nouvelles technologies.
+      </p>
+    </section>
+
+    <!-- LISTE DE PROJETS -->
+    <section class="projets">
+        <div class="projet-card">
+            <a href="../images/imageProjetPortfolio.png">
+                <img src="../images/imageProjetPortfolio.png" alt="Site portfolio personnel">
+            </a>
+            <div class="projet-content">
+                <h2>Portfolio personnel</h2>
+                <p>
+                Développement complet de mon <strong>site portfolio</strong> afin de présenter mes compétences, 
+                mes projets et mon parcours professionnel.  
+                Le site a été entièrement conçu en <strong>HTML</strong>, <strong>CSS</strong> et <strong>JavaScript</strong>, 
+                avec une attention particulière portée à la <strong>responsivité</strong> et l’<strong>esthétique</strong>.
+                </p>
+                <ul class="tech-list">
+                    <li>Langages : HTML5, CSS3, JavaScript</li>
+                    <li>Outils : Visual Studio Code, GitHub Pages</li>
+                </ul>
+                <a href="https://vincent67580.github.io/portfolio/index.html" class="btn-projet" target="_blank">Voir le site</a>
+            </div>
+        </div>
+
+        <div class="projet-card">
+            <a href="../images/imageProjetPythonGestionRDV.png">
+                <img src="../images/imageProjetPythonGestionRDV.png" alt="Application Python de gestion de rendez-vous">
+            </a>
+            <div class="projet-content">
+                <h2>Application Python de gestion de rendez-vous</h2>
+                <p>
+                    Développement d’une application en <strong>Python</strong> fonctionnant en <strong>mode console</strong>, 
+                    permettant de <strong>gérer des rendez-vous clients</strong> (ajout, affichage, modification, suppression) 
+                    et d’envoyer automatiquement un <strong>e-mail de confirmation ou d’annulation</strong> à chaque action.
+                </p>
+                <ul class="tech-list">
+                    <li>Langage : Python</li>
+                    <li>Base de données : SQLite3</li>
+                    <li>Modules : smtplib, email, sqlite3</li>
+                    <li>Fonctionnalités : prise/suppression de RDV, validation, notifications automatiques</li>
+                </ul>
+                <a href="../projets/projetPythonGestionRDV.txt" class="btn-projet" target="_blank">Voir le code</a><br><br>
+                <a href="../projets/projetPythonGestionRDV.zip" class="btn-projet" download="Gestion_RDV.py">Télécharger le script</a>
+            </div>
+        </div>
+
+        <div class="projet-card">
+            <a href="../images/imageProjetPythonBotResto.png">
+                <img src="../images/imageProjetPythonBotResto.png" alt="Bot Python de recherche de restaurants">
+            </a>
+            <div class="projet-content">
+                <h2>Bot Python de recherche de restaurants</h2>
+                <p>
+                    Développement d’un <strong>bot console</strong> permettant de rechercher des 
+                    <strong>restaurants autour d’une ville</strong> via les API 
+                    <strong>OpenStreetMap (Nominatim & Overpass)</strong>.  
+                    L’utilisateur choisit le <strong>rayon</strong>, le <strong>nombre de résultats</strong> 
+                    et peut <strong>exporter la liste au format CSV</strong>.
+                </p>
+
+                <ul class="tech-list">
+                    <li>Langage : Python</li>
+                    <li>Bibliothèques : requests, json, csv, os</li>
+                    <li>API utilisées : Nominatim (géolocalisation), Overpass (recherche OSM)</li>
+                    <li>Fonctionnalités :
+                    <ul>
+                        <li>Recherche par ville et rayon personnalisé</li>
+                        <li>Affichage des résultats avec adresse, type de cuisine, coordonnées GPS</li>
+                        <li>Export automatique des données dans restaurants.csv</li>
+                    </ul>
+                    </li>
+                </ul>
+
+                <a href="../projets/projetPythonBotRechercheResto.txt" class="btn-projet" target="_blank">Voir le code</a><br><br>
+                <a href="../projets/projetPythonBotRechercheResto.zip" class="btn-projet" download="Recherche_Resto.py">Télécharger le script</a>
+            </div>
+        </div>
+
+        <!-- Pour ajouter un nouveau projet -->
+        <!-- <div class="projet-card">
+            <a href="../images/">
+                <img src="../images/" alt="">
+            </a>
+            <div class="projet-content">
+                <h2></h2>
+                <p>
+                    
+                </p>
+                <ul class="tech-list">
+                    <li></li>
+                    <li></li>
+                </ul>
+                <a href="" class="btn-projet" target="_blank">Voir</a>
+            </div> -->
+
+
+      
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2025 - Portfolio de Vincent Bonnet </p>
+    </footer>
+
+        
+</body>
+
+</html>
