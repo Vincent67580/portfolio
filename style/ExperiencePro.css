@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ===========================
    Fichier : ExperiencePro.css
    Page : experiencePro.html
@@ -83,3 +84,90 @@
   margin-bottom: 6px;
   line-height: 1.5;
 }
+=======
+/* ===========================
+   Fichier : ExperiencePro.css
+   Page : experiencePro.html
+   =========================== */
+
+/* ====== SECTION EXPÉRIENCE ====== */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.intro-experience {
+  max-width: 900px;
+  margin: 20px auto 40px;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: #ffffff;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeSlideUp 1s ease-out;
+}
+
+#experience {
+  padding: 20px 20px;
+  position: relative;   
+  background: transparent; 
+  z-index: 1; 
+  animation: fadeSlideUp 1s ease-out;
+
+}
+
+#experience .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.35);
+}
+
+.experience-title {
+  font-size: 1.3rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.experience-title span {
+  color: #0077cc;
+}
+
+.experience-title a {
+  text-decoration: none;
+}
+
+.experience-date {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.experience-tech {
+  color: #444;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.experience-list {
+  padding-left: 20px;
+  color: #333;
+}
+
+.experience-list li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+>>>>>>> d3f1b35e684c85c97e1b51a6ad29c74ff932fb3d
