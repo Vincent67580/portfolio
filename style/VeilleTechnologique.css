@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ===========================
    Fichier : veilleTechnologique.css
    Page : veilleTechnologique.html
@@ -64,70 +63,3 @@
 .veille-card {
   animation: fadeInUp 0.6s ease forwards;
 }
-=======
-/* ===========================
-   Fichier : veilleTechnologique.css
-   Page : veilleTechnologique.html
-   =========================== */
-
-/* ====== SECTION VEILLE TECHNOLOGIQUE ====== */
-
-#veille {
-  padding: 60px 20px;
-  position: relative;     /* Pour apparaître au-dessus du canvas */
-  background: transparent;
-  z-index: 1;
-}
-
-#veille .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  opacity: 0.65;
-}
-
-/* Carte principale (contenu à venir) */
-.veille-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 40px 30px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
-}
-
-.veille-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.35);
-}
-
-
-.veille-card p {
-  color: #333;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-/* Petit effet pour le texte secondaire */
-.veille-card em {
-  color: #555;
-  font-style: italic;
-}
-
-/* Animation douce d’apparition */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.veille-card {
-  animation: fadeInUp 0.6s ease forwards;
-}
->>>>>>> d3f1b35e684c85c97e1b51a6ad29c74ff932fb3d
