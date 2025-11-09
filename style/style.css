@@ -346,6 +346,15 @@ a:hover {
     border-radius: 2px; 
     transition: all 0.3s ease; 
   } 
+
+  .navbar .dropdown > a::before {
+    content: ""; 
+  }
+
+/* Affiche pas sous-menu au survol */
+.navbar .dropdown:hover .dropdown-menu {
+  display: none;
+}
   
   /* Animation croix */ 
   .menu-toggle.open span:nth-child(1) { 

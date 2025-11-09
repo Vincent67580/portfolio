@@ -11,40 +11,13 @@
 
     <!-- Script -->
     <script src="script/script.js" defer></script>
+    <script src="script/navbar.js" defer></script>
   </head>
 
   <body>
     <canvas id="network-bg"></canvas>
 
-<!-- Barre de navigation -->
-<nav class="navbar">
-  <div class="logo">
-    Vincent Bonnet
-  </div>
-  <div class="menu-toggle" id="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
 
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" class="active">Accueil</a></li>
-    <li><a href="pages/about.html">Info personnelles</a></li>
-    <li class="dropdown">
-      <a href="pages/stages/indexStage.html">Stage</a>
-      <ul class="dropdown-menu">
-        <li><a href="pages/stages/stage1.html">Stage 1</a></li>
-        <li><a href="pages/stages/stage2.html">Stage 2</a></li>
-      </ul>
-    </li>
-    <li><a href="pages/competence.html">Compétences</a></li>
-    <li><a href="pages/projetPerso.html">Projets personnelles</a></li>
-    <li><a href="pages/experiencePro.html">Expériences professionnelles</a></li>
-    <li><a href="pages/veilleTechnologique.html">Veille technologique</a></li>
-    
-    
-  </ul>
-</nav>
 
     <main>
       <!-- En-tête -->
@@ -55,7 +28,7 @@
       </div>
 
       <!-- Présentation personnelle -->
-      <section class="info_perso">
+      <section class="info_perso" id="info-perso">
         <h2>Informations personnelles</h2>
         <p>
           Je suis <strong>BONNET Vincent</strong>, étudiant en BTS SIO (Services Informatiques aux Organisations)
