@@ -9,8 +9,11 @@
         <link rel="stylesheet"  href="../style/projetPerso.css">
         <canvas id="network-bg"></canvas>
         <!-- Script -->
-    <script src="../script/script.js" defer></script>
-    <script src="../script/navbar.js" defer></script>
+        <script src="../script/script.js" defer></script>
+        <script src="../script/navbar.js" defer></script>
+    
+        <!-- Logo d'application -->
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     </head>
     <body>
 
@@ -45,8 +48,17 @@
                 avec une attention particulière portée à la <strong>responsivité</strong> et l’<strong>esthétique</strong>.
                 </p>
                 <ul class="tech-list">
-                    <li>Langages : HTML5, CSS3, JavaScript</li>
-                    <li>Outils : Visual Studio Code, GitHub Pages</li>
+                    <li>Langages :</li>
+                    <ul>
+                        <li><iconify-icon icon="vscode-icons:file-type-html"></iconify-icon> HTML5</li>
+                        <li><iconify-icon icon="simple-icons:css3" style="color:#1572B6;"></iconify-icon> CSS3</li>
+                        <li><iconify-icon icon="logos:javascript"></iconify-icon> JavaScript</li>
+                    </ul>
+                    <li>Outils : </li>
+                    <ul>
+                        <li><iconify-icon icon="vscode-icons:file-type-vscode"></iconify-icon> VS Code</li>
+                        <li><iconify-icon icon="mdi:github" style="font-size:30px;"></iconify-icon> GitHub Pages</li>
+                    </ul>
                 </ul>
                 <a href="https://vincent67580.github.io/portfolio/index.html" class="btn-projet" target="_blank">Voir le site</a>
             </div>
@@ -64,11 +76,28 @@
                     et d’envoyer automatiquement un <strong>e-mail de confirmation ou d’annulation</strong> à chaque action.
                 </p>
                 <ul class="tech-list">
-                    <li>Langage : Python</li>
-                    <li>Base de données : SQLite3</li>
-                    <li>Modules : smtplib, email, sqlite3</li>
-                    <li>Fonctionnalités : prise/suppression de RDV, validation, notifications automatiques</li>
+                    <li>Langage :</li>
+                    <ul>
+                        <li><iconify-icon icon="logos:python"></iconify-icon> Python</li>
+                    </ul>
+                    <li>Base de données :</li>
+                    <ul>
+                        <li><iconify-icon icon="logos:sqlite"></iconify-icon> SQLite3</li>
+                    </ul>
+                    <li>Modules utilisés :</li>
+                    <ul>
+                        <li><iconify-icon icon="mdi:email-send" style="color:#0078D4; font-size:25px;"></iconify-icon> smtplib</li>
+                        <li><iconify-icon icon="mdi:email" style="color:#E53935; font-size:25px;"></iconify-icon> email</li>
+                        <li><iconify-icon icon="logos:sqlite"></iconify-icon>SQLite3</li>
+                    </ul>
+                    <li>Fonctionnalités :</li>
+                    <ul>
+                        <li><iconify-icon icon="mdi:calendar-plus" style="color:#4CAF50; font-size:25px;"></iconify-icon> Prise de rendez-vous</li>
+                        <li><iconify-icon icon="mdi:calendar-remove" style="color:#FF7043; font-size:25px;"></iconify-icon> Suppression / modification</li>
+                        <li><iconify-icon icon="mdi:email-fast" style="color:#0288D1; font-size:25px;"></iconify-icon> Notifications automatiques par e-mail</li>
+                    </ul>
                 </ul>
+
                 <a href="../projets/projetPythonGestionRDV.txt" class="btn-projet" target="_blank">Voir le code</a><br><br>
                 <a href="../projets/projetPythonGestionRDV.zip" class="btn-projet" download="Gestion_RDV.py">Télécharger le script</a>
             </div>
@@ -89,7 +118,32 @@
                 </p>
 
                 <ul class="tech-list">
-                    <li>Langage : Python</li>
+                    <li>Langage :</li>
+                    <ul>
+                        <li><iconify-icon icon="logos:python"></iconify-icon> Python</li>
+                    </ul>
+                    <li>Bibliothèques :</li>
+                    <ul>
+                        <li><iconify-icon icon="simple-icons:python" style="color:#3776AB;"></iconify-icon> requests</li>
+                        <li><iconify-icon icon="vscode-icons:file-type-json"></iconify-icon> json</li>
+                        <li><iconify-icon icon="bi:filetype-csv" style="color:#0A7F42;"></iconify-icon> csv</li>
+                        <li><iconify-icon icon="mdi:folder" style="color:#795548;"></iconify-icon> os</li>
+                    </ul>
+                    <li>API utilisées :</li>
+                    <ul>
+                        <li><iconify-icon icon="simple-icons:openstreetmap" style="color:#77B255;"></iconify-icon> Nominatim</li>
+                        <li><iconify-icon icon="mdi:earth" style="color:#2E7D32;"></iconify-icon> Overpass API</li>
+                    </ul>
+                    <li>Fonctionnalités :</li>
+                    <ul>
+                        <li><iconify-icon icon="mdi:magnify" style="color:#1565C0;"></iconify-icon>Recherche par ville + rayon personnalisé</li>
+                        <li><iconify-icon icon="mdi:silverware-fork-knife" style="color:#8D6E63;"></iconify-icon>Affichage des résultats (adresse, type, coordonnées GPS)</li>
+                        <li><iconify-icon icon="bi:filetype-csv" style="color:#0A7F42;"></iconify-icon>Export automatique des données dans restaurants.csv</li>
+                    </ul>
+
+
+
+                    <!-- <li>Langage : Python</li>
                     <li>Bibliothèques : requests, json, csv, os</li>
                     <li>API utilisées : Nominatim (géolocalisation), Overpass (recherche OSM)</li>
                     <li>Fonctionnalités :
@@ -97,7 +151,7 @@
                         <li>Recherche par ville et rayon personnalisé</li>
                         <li>Affichage des résultats avec adresse, type de cuisine, coordonnées GPS</li>
                         <li>Export automatique des données dans restaurants.csv</li>
-                    </ul>
+                    </ul> -->
                     </li>
                 </ul>
 
