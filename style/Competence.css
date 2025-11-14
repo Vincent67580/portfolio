@@ -8,21 +8,26 @@
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+.competences{
+  animation: fadeSlideUp 1s ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
 
 .comp-dev-web, .comp-programation ,.comp-outils ,.comp-base-donnee ,.comp-dev-application ,.comp-autres{
-    text-align: center;
+  text-align: center;
   background-color: rgba(255, 255, 255, 1);
   padding: 40px 30px 40px;
-  margin: 30px auto;
+  margin: 30px auto 50px;
   max-width: 900px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeSlideUp 1s ease-out;
-  opacity: 0;
-  animation-fill-mode: forwards;
-  
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+}
+
+.comp-dev-web:hover , .comp-programation:hover ,.comp-outils:hover ,.comp-base-donnee:hover ,.comp-dev-application:hover ,.comp-autres:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.45);
 }
 
 section:nth-of-type(1){animation-delay:0.2s;}
@@ -33,10 +38,33 @@ section:nth-of-type(5){animation-delay:1s;}
 section:nth-of-type(6){animation-delay:1.2s;}
 
 
-.comp-dev-web:hover , .comp-programation:hover ,.comp-outils:hover ,.comp-base-donnee:hover ,.comp-dev-application:hover ,.comp-autres:hover {
-  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.55);
+section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  align-items: flex-start;
 }
 
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.tech-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 10px;
+}
+
+.tech-list iconify-icon {
+  font-size: 35px;
+}
 
 
 

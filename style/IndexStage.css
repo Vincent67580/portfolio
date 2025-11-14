@@ -36,14 +36,16 @@
 
 /* Carte de stage */
 .stage_card {
+  text-align: center;
   background-color: #ffffff;
+  padding: 20px;
+  /* margin: ; */
   width: 370px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  padding: 20px;
 }
 
 .stage_card:hover {
@@ -56,6 +58,13 @@
   font-size: 1.1em;
   margin-bottom: 15px;
   color: #555;
+}
+
+/* Logo entreprise */
+.entreprise-logo {
+  width: 120px;
+  margin: 10px auto 20px;
+  display: block;
 }
 
 /* Texte de description */
