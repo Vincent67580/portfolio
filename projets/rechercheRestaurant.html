@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurants autour d'une ville</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+    h1 { text-align: center; padding: 20px; color: #333; }
+
+    #form-box {
+        background: #fff;
+        padding: 20px;
+        max-width: 600px;
+        width: 85%;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"], input[type="number"], button {
+        width: 95%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #999;
+        border-radius: 5px;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.1);
+        margin-right: 6px;
+        vertical-align: middle;
+    }
+
+    label.inline { display: inline-block; margin-right: 10px; }
+
+    button {
+        background: #2e7dff;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    button:hover { background: #0053d6; }
+
+    #map {
+        height: 600px;
+        width: 65%;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    #results {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    #loading, #progress {
+        text-align: center;
+        padding: 8px;
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        #form-box {
+            width: 90%;
+            padding: 15px;
+        }
+        
+        #map {
+            width: 95%;
+            height: 400px;
+        }
+        #results {
+            padding: 10px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Recherche de Restaurants</h1>
+
+<div id="form-box">
+
+    <label for="ville">Ville :</label>
+    <input type="text" id="ville" placeholder="Ex : Strasbourg ou rue et ville ou CP">
+
+    <label for="rayon">Rayon (en km) :</label>
+    <input type="number" id="rayon" value="2">
+
+    <label for="nb">Nombre maximum :</label>
+    <input type="number" id="nb" value="20">
+
+    <div style="margin:8px 0;">
+        <label class="inline">
+            <input type="checkbox" id="chk-photon">
+            Améliorer les adresses (plus lent) (max : 50)
+        </label>
+    </div>
+
+    <button onclick="searchRestaurants()">Rechercher</button>
+
+</div>
+
+<div id="loading">⏳ Recherche en cours…</div>
+<div id="progress"></div>
+
+<div id="server-status" style="text-align:center; color:#555; margin-top:10px;"></div>
+
+<div id="map"></div>
+<div id="results"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+// ---------------------- Initialisation carte ----------------------
+let map = L.map('map').setView([48.8566, 2.3522], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+let markersLayer = L.layerGroup().addTo(map);
+
+// Liste de serveurs Overpass pour fallback automatique
+const OVERPASS_SERVERS = [
+    "https://overpass-api.de/api/interpreter",
+    "https://lz4.overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.openstreetmap.fr/api/interpreter",
+    "https://overpass.openstreetmap.ie/api/interpreter"
+];
+
+async function getCoordinates(ville) {
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(ville)}&limit=1`;
+    const response = await fetch(url, { headers: { "User-Agent": "OSM-App" }});
+    const data = await response.json();
+    return data.length ? { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) } : null;
+}
+
+async function reversePhoton(lat, lon) {
+    const url = `https://photon.komoot.io/reverse?lat=${lat}&lon=${lon}`;
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        if (!json.features?.length) return "Adresse inconnue";
+        const p = json.features[0].properties;
+        return [p.housenumber, p.street, p.postcode, p.city || p.town || p.village]
+            .filter(x => x).join(", ");
+    } catch {
+        return "Adresse inconnue";
+    }
+}
+
+function distance(lat1, lon1, lat2, lon2) {
+    const R = 6371e3;
+    const toRad = d => d * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a =
+        Math.sin(dLat/2)**2 +
+        Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+        Math.sin(dLon/2)**2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+function exportCSV(restaurants) {
+    let csv = "nom;cuisine;adresse;lat;lon\n";
+    restaurants.forEach(r => {
+        csv += `${r.nom.replace(/;/g,",")};${r.cuisine.replace(/;/g,",")};${(r.adresse||"").replace(/;/g,",")};${r.lat};${r.lon}\n`;
+    });
+    const blob = new Blob([csv], { type:"text/csv" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "restaurants.csv";
+    link.click();
+}
+
+// ---------------------- FONCTION fetch Overpass avec fallback ----------------------
+async function fetchOverpass(query) {
+    let lastError;
+    const statusDiv = document.getElementById("server-status");
+    for (const server of OVERPASS_SERVERS) {
+        statusDiv.innerText = `🔄 Recherche sur le serveur Overpass : ${server} …`;
+        try {
+            const resp = await fetch(server, {
+                method: "POST",
+                body: new URLSearchParams({ data: query })
+            });
+            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+            statusDiv.innerText = `Serveur ${server} répondu`;
+            return await resp.json();
+        } catch(e) {
+            console.warn(`Serveur Overpass échoué : ${server}`, e);
+            lastError = e;
+        }
+    }
+    statusDiv.innerText = "Aucun serveur Overpass n'a répondu";
+    throw lastError;
+}
+
+// ---------------------------- Recherche ----------------------------
+async function searchRestaurants() {
+
+    const ville = document.getElementById("ville").value.trim();
+    const rayon = Number(document.getElementById("rayon").value) * 1000;
+    const nb = Number(document.getElementById("nb").value);
+    const usePhoton = document.getElementById("chk-photon").checked;
+
+    const resultsDiv = document.getElementById("results");
+    const loading = document.getElementById("loading");
+    const progress = document.getElementById("progress");
+
+    resultsDiv.innerHTML = "";
+    loading.style.display = "block";
+
+    const coords = await getCoordinates(ville);
+    if (!coords) {
+        loading.style.display = "none";
+        resultsDiv.innerHTML = "<h3>❌ Ville introuvable</h3>";
+        return;
+    }
+
+    map.setView([coords.lat, coords.lon], 13);
+
+    const query = `
+        [out:json][timeout:12];
+        node["amenity"="restaurant"](around:${rayon},${coords.lat},${coords.lon});
+        out center qt;
+    `;
+
+    let json;
+    try {
+        json = await fetchOverpass(query);
+    } catch(e) {
+        console.error("Tous les serveurs Overpass ont échoué :", e);
+        loading.style.display = "none";
+        resultsDiv.innerHTML = "<h3>❌ Erreur Overpass. Tous les serveurs indisponibles.</h3>";
+        return;
+    }
+
+    loading.style.display = "none";
+    markersLayer.clearLayers();
+
+    let restaurants = (json.elements || []).map(el => ({
+        nom: el.tags?.name || "Inconnu",
+        cuisine: el.tags?.cuisine || "Non spécifié",
+        adresse: el.tags?.["addr:street"]
+            ? `${el.tags["addr:housenumber"]||""} ${el.tags["addr:street"]||""}, ${el.tags["addr:postcode"]||""} ${el.tags["addr:city"]||""}`
+            : null,
+        lat: el.lat,
+        lon: el.lon,
+        dist: distance(coords.lat, coords.lon, el.lat, el.lon)
+    }));
+
+    restaurants.sort((a,b) => a.dist - b.dist);
+    restaurants = restaurants.slice(0, nb);
+
+// Limite à 50 restaurants pour l'enrichissement Photon
+    const photonLimit = 50;
+    const restaurantsForPhoton = restaurants.slice(0, photonLimit);
+
+// ---------------------- Enrichissement Photon ----------------------
+    if (usePhoton) {
+        const sleep = ms => new Promise(res => setTimeout(res, ms));
+        const missing = restaurantsForPhoton.filter(r => !r.adresse);
+        const total = missing.length;
+        let done = 0;
+        progress.style.display = "block";
+        const cache = new Map();
+        for (let i=0; i<missing.length; i+=2) {
+            const batch = missing.slice(i, i+2).map(async r => {
+                const key = `${r.lat.toFixed(5)},${r.lon.toFixed(5)}`;
+                if (cache.has(key)) r.adresse = cache.get(key);
+                else { const addr = await reversePhoton(r.lat, r.lon); cache.set(key, addr); r.adresse = addr; }
+                done++; progress.innerText = `Recherche des adresses : ${done}/${total}`;
+            });
+            await Promise.all(batch);
+            await sleep(75);
+        }
+        progress.style.display = "none";
+    }
+
+
+    // ---------------------- Marqueurs ----------------------
+    restaurants.forEach(r => {
+        L.marker([r.lat, r.lon]).bindPopup(`
+            <b>${r.nom}</b><br>
+            ${r.cuisine}<br>
+            ${r.adresse || "Adresse inconnue"}
+        `).addTo(markersLayer);
+    });
+
+    if (restaurants.length)
+        map.fitBounds(restaurants.map(r => [r.lat, r.lon]));
+
+    // ---------------------- Affichage liste ----------------------
+    resultsDiv.innerHTML = `
+        <h2>${restaurants.length} restaurants trouvés autour de ${ville}</h2>
+        <button onclick='exportCSV(${JSON.stringify(restaurants)})'>Exporter en CSV</button>
+        <hr>
+    `;
+    restaurants.forEach(r => {
+        resultsDiv.innerHTML += `
+        <section class="restaurant-card" style="margin-bottom:15px; padding:10px; background:#fff; border-radius:5px; box-shadow:0 0 5px rgba(0,0,0,0.1);">
+            <p><strong>Nom du restaurant :</strong> ${r.nom}</p>
+            <p><strong>Type de cuisine :</strong> ${r.cuisine}</p>
+            <p><strong>Adresse :</strong> ${r.adresse || "Adresse inconnue"}</p>
+            <p><strong>Distance :</strong> ${(r.dist/1000).toFixed(2)} km</p>
+        </section>
+    `;
+    });
+}
+
+</script>
+
+</body>
+</html>
