@@ -93,9 +93,11 @@
 
     <label for="rayon">Rayon (en km) :</label>
     <input type="number" id="rayon" value="2">
+    <div id="rayon-error" style="color:red; font-size:0.9em; margin-top:4px;"></div>
 
     <label for="nb">Nombre maximum :</label>
-    <input type="number" id="nb" value="20">
+    <input type="number" id="nb" value="20" min="1" max="200">
+    <div id="nb-error" style="color:red; font-size:0.9em; margin-top:4px;"></div>
 
     <div style="margin:8px 0;">
         <label class="inline">
@@ -119,8 +121,63 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
+//----------------------------------------
+// --------VERIFICATION SAISIE------------
+// ---------------------------------------
+
+//  Vérification nombre mini, max de la recherche
+const rayonInput = document.getElementById("rayon");
+const rayonError = document.getElementById("rayon-error");
+
+rayonInput.addEventListener("input", () => {
+    let rayon = Number(rayonInput.value);
+
+    if (rayon > 20) {
+        rayon = 20;
+        rayonInput.value = rayon;
+        rayonError.innerText = "Le rayon maximum est de 20 km.";
+    } else if (rayon < 1) {
+        rayon = 1;
+        rayonInput.value = rayon;
+        rayonError.innerText = "Le rayon minimum est de 1 km.";
+    } else {
+        rayonError.innerText = "";
+    }
+});
+
+
+// Vérification nombre mini, max de la recherche de restaurant 
+const nbInput = document.getElementById("nb");
+const nbError = document.getElementById("nb-error");
+const chkPhoton = document.getElementById("chk-photon");
+
+function validateNb() {
+    let nb = Number(nbInput.value);
+    let maxVal = chkPhoton.checked ? 50 : 200;
+
+    if (nb > maxVal) {
+        nb = maxVal;
+        nbInput.value = nb;
+        nbError.innerText = `Le nombre maximum de résultats est limité à ${maxVal}.`;
+    } else if (nb < 1) {
+        nb = 1;
+        nbInput.value = nb;
+        nbError.innerText = "Le nombre minimum est 1.";
+    } else {
+        nbError.innerText = "";
+    }
+}
+
+// Validation à chaque saisie
+nbInput.addEventListener("input", validateNb);
+
+// Validation au changement de la checkbox
+chkPhoton.addEventListener("change", validateNb);
+
+
+
 // ---------------------- Initialisation carte ----------------------
-let map = L.map('map').setView([48.8566, 2.3522], 13);
+let map = L.map('map').setView([48.5826, 7.7522], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
@@ -207,6 +264,7 @@ async function fetchOverpass(query) {
 
 // ---------------------------- Recherche ----------------------------
 async function searchRestaurants() {
+
 
     const ville = document.getElementById("ville").value.trim();
     const rayon = Number(document.getElementById("rayon").value) * 1000;

@@ -29,16 +29,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 50px 30px;
   margin: 60px auto;
-  max-width: 1100px;
+  max-width: 1200px;
   animation: fadeSlideUp 1.2s ease-out;
 }
 
 /* Carte projet */
 .projet-card {
   background-color: #ffffff;
-  width: 320px;
+  width: 40%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   overflow: hidden;
