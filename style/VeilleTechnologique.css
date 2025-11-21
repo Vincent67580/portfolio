@@ -14,10 +14,13 @@
 
 #veille .container {
   max-width: 1000px;
-  margin: 0 auto;
-  opacity: 0.65;
+  margin: 40px auto;
+  opacity: 1;
 }
 
+#veille .venir{
+  opacity: 0.65;
+}
 /* Carte principale (contenu à venir) */
 .veille-card {
   background-color: #fff;
@@ -29,10 +32,10 @@
   
 }
 
-.veille-card:hover {
+/* .veille-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 28px rgba(0, 42, 255, 0.35);
-}
+} */
 
 
 .veille-card p {
@@ -46,6 +49,48 @@
 .veille-card em {
   color: #555;
   font-style: italic;
+}
+
+/* Carte principale (contenu à venir) */
+.veille-techno {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+}
+
+.veille-techno:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.35);
+}
+
+
+.veille-techno p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+
+/* Bouton de projet */
+.btn-veille {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-veille:hover {
+  background-color: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
 }
 
 /* Animation douce d’apparition */
