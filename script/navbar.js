@@ -1,3 +1,6 @@
+// script/navbar.js
+
+// script pour bar de navigation
 document.addEventListener("DOMContentLoaded", () => {
   const path = location.pathname;
 
@@ -34,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         link.setAttribute("href", href);
 
-        // ✅ Ajoute la classe "active" si le href correspond à la page actuelle
+        // Ajoute la classe "active" si le href correspond à la page actuelle
         const current = path.split("/").pop(); // ex: "about.html"
         const linkFile = href.split("/").pop();
         if (current === linkFile) {
@@ -60,3 +63,4 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error("Erreur de chargement de la nav :", err));
 });
+
