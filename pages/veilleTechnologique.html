@@ -1,44 +1,72 @@
-<!-- pages/veilleTechnologique.html -->
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>Veille Technologique</title>
-        <link rel="stylesheet"  href="../style/style.css">
-        <link rel="stylesheet"  href="../style/VeilleTechnologique.css">
-        <canvas id="network-bg"></canvas>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Script -->
-        <script src="../script/script.js" defer></script>
-        <script src="../script/navbar.js" defer></script>
-        <script src="../script/footer.js" defer></script>
-    </head>
-    <body>
+    <title>Veille technologique</title>
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/veilleTechnologique.css">
 
-        <div class="en_tete">
-            <h1 class="en_tete_texte">Veille technologique</h1>
+    <!-- Scripts -->
+    <script src="../script/script.js" defer></script>
+    <script src="../script/navbar.js" defer></script>
+    <script src="../script/footer.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Fond animé -->
+    <canvas id="network-bg"></canvas>
+
+    <!-- En-tête -->
+    <header class="en_tete">
+        <h1 class="en_tete_texte">Veille technologique</h1>
+    </header>
+
+    <!-- Section principale -->
+    <main id="veille">
+
+        <!-- Présentation de la veille -->
+        <div class="container">
+            <div class="veille-techno">
+                <h2>Outils et sujet de veille</h2>
+                <p>Veille technologique réalisée à l’aide de la plateforme <strong>Start.me</strong>.</p>
+                <p>
+                    <strong>Sujet :</strong>  
+                    Le développement en low-code / no-code comparé à la génération de code via l’IA.
+                </p>
+
+                <a href="https://start.me/p/w9YEbL/page-d-accueil"
+                   class="btn-veille"
+                   target="_blank"
+                   rel="noopener">
+                    Consulter la veille
+                </a>
+            </div>
         </div>
-<!-- Section principale -->
-<main id="veille">
-  <div class="container">
-    <div class="veille-techno">
-      <h2>Veille technologique</h2>
-      <p>Veille technologique réalisée avec startme </p>
-      <p>Sujet : Le développement en low-code / no-code comparer a la génération de code via IA</p>
-      <a href="https://start.me/p/w9YEbL/page-d-accueil" class="btn-veille" target="_blank">Voir</a>
-    </div>
-  </div>
 
-  <div class="container venir">
-    <div class="veille-card">
-      <p><em>Revenez plus tard dans l’année pour découvrir plus de recherches sur la veille technologique.</em></p>
-    </div>
-  </div>
-</main>
-   
+        <!-- Message à venir -->
+        <!-- <div class="container venir">
+            <div class="veille-card">
+                <p><em>
+                    Revenez plus tard dans l’année pour découvrir davantage de recherches
+                    liées à la veille technologique.
+                </em></p>
+            </div>
+        </div> -->
+
+        <!-- Intégration Start.me -->
+        <iframe
+            src="https://start.me/p/w9YEbL/page-d-accueil"
+            class="iframe-startme"
+            loading="lazy"
+            title="Veille technologique Start.me">
+        </iframe>
+
+    </main>
 
 </body>
 </html>

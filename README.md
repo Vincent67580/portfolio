@@ -10,6 +10,7 @@ Fonctionnalités
 - Responsive (CSS) pour mobiles/tablettes.
 - Galerie / cartes de projets.
 - Liens vers GitHub et LinkedIn.
+- Barre de navigation et footer dynamique avec l'utilisation de JavaScript.
 
 Technologies
 ------------
@@ -21,6 +22,6 @@ Structure du dépôt
 - index.html — page d'accueil
 - pages/*.html — pages secondaires (about, projetPerso, experiencePro, ...)
 - style/ — fichiers CSS (style.css, About.css, ExperiencePro.css, ...)
-- script/ — scripts JS (script.js)
+- script/ — scripts JS (script.js , footer.js , navbar.js)
 - images/ — images et illustrations
 - README.md — documentation (ce fichier)

@@ -1,110 +1,101 @@
 /* ===========================
-   Fichier : veilleTechnologique.css
-   Page : veilleTechnologique.html
+   Page : veilleTechnologique
    =========================== */
 
-/* ====== SECTION VEILLE TECHNOLOGIQUE ====== */
-
+/* SECTION VEILLE */
 #veille {
-  padding: 60px 20px;
-  position: relative;     /* Pour apparaître au-dessus du canvas */
-  background: transparent;
-  z-index: 1;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
 }
 
+/* Conteneur */
 #veille .container {
-  max-width: 1000px;
-  margin: 40px auto;
-  opacity: 1;
+    max-width: 1000px;
+    margin: 40px auto;
 }
 
-#veille .venir{
-  opacity: 0.65;
+/* Opacité section à venir */
+#veille .venir {
+    opacity: 0.65;
 }
-/* Carte principale (contenu à venir) */
+
+/* Carte principale */
+.veille-techno,
 .veille-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 40px 30px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
-/* .veille-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.35);
-} */
-
-
-.veille-card p {
-  color: #333;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-/* Petit effet pour le texte secondaire */
-.veille-card em {
-  color: #555;
-  font-style: italic;
-}
-
-/* Carte principale (contenu à venir) */
-.veille-techno {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 40px 30px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
-}
-
+/* Hover (uniquement sur la carte principale) */
 .veille-techno:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 28px rgba(0, 42, 255, 0.35);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 28px rgba(0, 42, 255, 0.35);
 }
 
-
-.veille-techno p {
-  color: #333;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
+/* Textes */
+.veille-techno p,
+.veille-card p {
+    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
+.veille-card em {
+    color: #555;
+    font-style: italic;
+}
 
-/* Bouton de projet */
+/* Bouton */
 .btn-veille {
-  display: inline-block;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-veille:hover {
-  background-color: #ffcc00;
-  color: #000;
-  transform: scale(1.05);
+    background-color: #ffcc00;
+    color: #000;
+    transform: scale(1.05);
 }
 
-/* Animation douce d’apparition */
+/* Iframe Start.me */
+.iframe-startme {
+    display: block;
+    width: 90%;
+    height: 80vh;
+    margin: 60px auto;
+    border: none;
+    border-radius: 12px;
+}
+
+/* Animation */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.veille-card {
-  animation: fadeInUp 0.6s ease forwards;
+/* Responsive */
+@media (max-width: 768px) {
+    .iframe-startme {
+        width: 95%;
+        height: 70vh;
+    }
 }
