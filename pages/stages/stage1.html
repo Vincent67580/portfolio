@@ -3,65 +3,159 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <meta http-equiv="refresh" content="5"> -->
         <title>Stage 1ere année</title>
         <link rel="stylesheet"  href="../../style/style.css">
         <link rel="stylesheet"  href="../../style/Stage.css">
         <canvas id="network-bg"></canvas>
-        <!-- Script -->
-    <script src="../../script/script.js" defer></script>
-    <script src="../../script/navbar.js" defer></script>
-    <script src="../../script/footer.js" defer></script>
-    </head>
-    <body>
 
-      
+        <!-- Script -->
+        <script src="../../script/script.js" defer></script>
+        <script src="../../script/navbar.js" defer></script>
+        <script src="../../script/footer.js" defer></script>
+    </head>
+
+<body>
+
 <div class="en_tete">
   <h1 class="en_tete_texte">Stage 1ere année</h1>
 </div>
 
 <!-- INTRODUCTION -->
 <section class="intro">
-  <p>
-    Durant ma première année de BTS SIO, j’ai effectué un stage au sein de 
-    <strong>TRUMPF Machines SARL</strong> à Haguenau, du 
-    <strong>02 juin 2025 au 04 juillet 2025</strong>.
-  </p>
-  <p>
-    Ce stage avait pour objectif de réaliser la maintenance d’une application interne développée sous 
-    <strong>PowerApps</strong>. J’ai corrigé plusieurs problèmes d’affichage, optimisé certaines interactions et 
-    amélioré l’interface utilisateur.
-  </p>
+    <p>
+        Durant ma première année de <strong>BTS SIO</strong>, j’ai effectué un stage au sein de
+        <strong>TRUMPF Machines SARL</strong> à Haguenau, du
+        <strong>02 juin 2025 au 04 juillet 2025</strong>.
+    </p>
+    <p>
+        Ce stage avait pour objectif principal la maintenance, l’optimisation et
+        l’évolution d’une application interne de commande de repas développée
+        sous <strong>Microsoft Power Apps</strong> et connectée à <strong>SharePoint</strong>
+        et <strong>Power Automate</strong>.
+    </p>
 </section>
 
-    <section class="stage-details">
-      <div class="stage-card">
+<!-- INFORMATIONS GÉNÉRALES -->
+<section class="stage-details">
+
+    <div class="stage-card">
         <h2>Entreprise d’accueil</h2>
         <img src="../../images/Logo_Trumpf.png" alt="Logo TRUMPF" class="entreprise-logo">
-        <p><strong>TRUMPF Machines SARL</strong><br>
-        12 Chem. de la Sandlach, 67500 Haguenau</p>
-      </div>
+        <p>
+            <strong>TRUMPF Machines SARL</strong><br>
+            12 Chemin de la Sandlach<br>
+            67500 Haguenau
+        </p>
+    </div>
 
-      <div class="stage-card">
+    <div class="stage-card">
         <h2>Durée du stage</h2>
         <p>Du <strong>02/06/2025</strong> au <strong>04/07/2025</strong></p>
-      </div>
+    </div>
 
-      <div class="stage-card">
+    <div class="stage-card">
         <h2>Missions principales</h2>
         <ul class="missions-list">
-          <li>Maintenance et correction d’anomalies sur une application PowerApps</li>
-          <li>Amélioration de l’affichage et de l’ergonomie des écrans</li>
-          <li>Optimisation des performances et fiabilisation de l’interface</li>
+            <li>Maintenance et évolution d’une application Power Apps</li>
+            <li>Optimisation des performances et amélioration de l’ergonomie</li>
+            <li>Gestion des droits utilisateurs et rôles administrateurs</li>
+            <li>Déploiement en production</li>
+            <li>Rédaction de documentation technique et utilisateur</li>
         </ul>
-      </div>
-    </section>
+    </div>
 
-    <!-- RETOUR -->
-    <div class="back-link">
-        <a href="indexStage.html" class="btn-retour">Retour à la page des stages</a>
-    </div>        
+</section>
 
-    
-    </body>
+<!-- MISSIONS DÉTAILLÉES -->
+<section class="missions-detaillees">
+  <h2>Missions détaillées</h2>
+
+  <h3>Analyse et rédaction du cahier des charges</h3>
+  <p>
+    Le stage a débuté par la rédaction d’un cahier des charges complet
+    afin de cadrer les modifications et évolutions à apporter à l’application
+    de commande de repas. Plusieurs réunions ont été organisées avec les
+    différents services afin d’identifier précisément les besoins des
+    utilisateurs standards et administrateurs.
+  </p>
+
+  <h3>Amélioration et optimisation de l’application Power Apps</h3>
+  <p>
+    L’application existante a été retravaillée afin d’améliorer l’ergonomie
+    et les performances. Le système de modification et d’annulation de commande
+    a été entièrement refait en utilisant des flux <strong>Power Automate</strong>
+    connectés à <strong>SharePoint</strong>.
+  </p>
+  <p>
+    Des vérifications ont été ajoutées afin d’empêcher la modification
+    d’une commande pour un jour passé ou après l’heure limite (9h pour
+    les utilisateurs standards, et plus pour les administrateurs afin qu'ils puissent effectuer des modifications au dernier moment).
+  </p>
+  <p>
+    Le système de vérification des commandes existantes a été optimisé
+    en supprimant certaines dépendances aux flux Power Automate,
+    permettant un gain significatif de rapidité.
+  </p>
+
+  <h3>Gestion des droits et rôles utilisateurs</h3>
+  <p>
+    Un système de gestion des rôles a été mis en place pour différents profils :
+    IT, RH, gestion des repas, direction, membres CSE, etc...
+  </p>
+  <p>
+    Plusieurs pages administrateur ont été développées :
+  </p>
+  <ul>
+      <li>Affichage des profils ayant des droits spécifiques</li>
+      <li>Ajout de nouveaux utilisateurs avec rôles</li>
+      <li>Modification des droits existants</li>
+  </ul>
+
+  <h3>Gestion des comptes provisoires</h3>
+  <p>
+    Une fonctionnalité a été développée pour permettre aux nouveaux employés
+    de commander un repas même si leur matricule n’était pas encore disponible.
+  </p>
+  <p>
+    Des pages spécifiques ont été créées afin de :
+  </p>
+  <ul>
+      <li>Réattribuer les repas d’un compte provisoire vers un compte définitif</li>
+      <li>Réinitialiser un compte provisoire sous certaines conditions</li>
+  </ul>
+
+  <h3>Optimisation technique</h3>
+  <p>
+    Les variables et collections de l’application ont été renommées afin
+    d’améliorer la lisibilité du code. Certaines lignes de code ont été
+    optimisées pour améliorer les performances globales de l’application.
+  </p>
+  <p>
+    L’interface envoyée au traiteur a été rendue dynamique afin de s’adapter
+    automatiquement si le nombre de menus proposés évolue.
+  </p>
+
+  <h3>Déploiement et documentation</h3>
+  <p>
+    Après validation des modifications avec les services concernés, la nouvel version de l’application 
+    a été déployée en production.
+  </p>
+  <p>
+    Plusieurs documents ont été rédigés :
+  </p>
+  <ul>
+      <li>Mode opératoire utilisateur standard</li>
+      <li>Guide administrateur</li>
+      <li>Documentation technique expliquant le fonctionnement du code</li>
+      <li>Processus de gestion des prises de repas</li>
+  </ul>
+
+</section>
+
+<!-- RETOUR -->
+<div class="back-link">
+    <a href="indexStage.html" class="btn-retour">Retour à la page des stages</a>
+</div>
+
+</body>
 </html>

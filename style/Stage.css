@@ -113,3 +113,68 @@
     width: 90%;
   }
 }
+
+/* ===========================
+   Missions détaillées
+   =========================== */
+
+.missions-detaillees {
+  max-width: 1000px;
+  margin: 60px auto;
+  background-color: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeSlideUp 1.3s ease-out;
+  line-height: 1.7;
+}
+
+/* Titre principal */
+.missions-detaillees h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Titres des semaines */
+.missions-detaillees h3 {
+  font-size: 1.4em;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  border-left: 5px solid #ffcc00;
+  color: #333;
+}
+
+/* Paragraphes */
+.missions-detaillees p {
+  font-size: 1.05em;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Effet séparation douce */
+.missions-detaillees h3:not(:first-of-type) {
+  margin-top: 45px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .missions-detaillees {
+    padding: 30px 20px;
+  }
+
+  .missions-detaillees h2 {
+    font-size: 1.6em;
+  }
+
+  .missions-detaillees h3 {
+    font-size: 1.2em;
+  }
+
+  .missions-detaillees p {
+    font-size: 1em;
+  }
+}
